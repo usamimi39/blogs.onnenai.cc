@@ -1,5 +1,4 @@
 import { load } from "cheerio";
-import Image from "next/image";
 import Link from "next/link";
 
 interface BookmarkProps {
@@ -74,6 +73,7 @@ export async function Bookmark({ url }: BookmarkProps) {
         </div>
         <div className="flex items-center gap-2 mt-2">
           {/* Favicon (エラー時は表示しない簡易実装) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={meta.faviconUrl} 
             alt="" 
@@ -87,6 +87,7 @@ export async function Bookmark({ url }: BookmarkProps) {
       
       {meta.image && (
         <div className="w-[180px] h-full relative border-l border-border shrink-0 hidden sm:block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={meta.image}
             alt={meta.title}
