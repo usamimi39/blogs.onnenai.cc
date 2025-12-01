@@ -91,8 +91,8 @@ export async function generateMetadata({
         title: page.data.title,
         description: page.data.description,
         images: [page.data.thumbnail || ogImage],
-        creator: "@dillionverma",
-        site: "@dillionverma",
+        creator: "@onnenai_w57",
+        site: "@onnenai_w57",
       },
       alternates: {
         canonical: ogUrl,
