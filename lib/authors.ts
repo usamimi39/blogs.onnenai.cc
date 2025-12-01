@@ -2,18 +2,15 @@ export interface Author {
   name: string;
   position: string;
   avatar: string;
+  url?: string;
 }
 
 export const authors: Record<string, Author> = {
-  dillion: {
-    name: "Dillion Verma",
-    position: "Software Engineer",
-    avatar: "/authors/dillion.png",
-  },
-  arghya: {
-    name: "Arghya Das",
-    position: "Design System Engineer",
-    avatar: "/authors/arghya.png",
+  onnenai: {
+    name: "Onnenai",
+    position: "もふもふ大学生",
+    avatar: "/authors/onnenai.png",
+    url: "https://links.onnenai.cc/",
   },
 } as const;
 

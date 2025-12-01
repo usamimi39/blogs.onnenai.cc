@@ -1,6 +1,8 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import React from "react";
+import { Tweet } from "react-tweet";
+import { Bookmark } from "@/components/bookmark";
 import {
   MediaViewer,
   ImageViewer,
@@ -43,6 +45,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     MediaViewer,
     ImageViewer,
     VideoViewer,
+    Tweet,
+    Bookmark,
     Accordion,
     AccordionContent,
     AccordionItem,

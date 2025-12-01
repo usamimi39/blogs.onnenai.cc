@@ -23,7 +23,7 @@ export function MobileTableOfContents() {
         </DrawerBody>
 
         <DrawerFooter>
-          <PromoContent variant="mobile" />
+          /* <PromoContent variant="mobile" /> */
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

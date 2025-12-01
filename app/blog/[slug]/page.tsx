@@ -59,7 +59,7 @@ export default async function BlogPost({ params }: PageProps) {
           className="absolute top-0 left-0 size-full"
           squareSize={4}
           gridGap={6}
-          color="#6B7280"
+          color="#0039FF"
           maxOpacity={0.2}
           flickerChance={0.05}
         />
@@ -139,7 +139,7 @@ export default async function BlogPost({ params }: PageProps) {
             <div className="border border-border rounded-lg p-6 bg-card">
               <TableOfContents />
             </div>
-            <PromoContent variant="desktop" />
+            {/* <PromoContent variant="desktop" /> */}
           </div>
         </aside>
       </div>
