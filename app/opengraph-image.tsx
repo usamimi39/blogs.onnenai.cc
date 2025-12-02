@@ -115,7 +115,7 @@ export default async function Image() {
             />
             <h1 style={styles.title}>Blog</h1>
             <p style={styles.description}>
-              A blog about design, development, and other things.
+              もふもふなブログ
             </p>
           </div>
         </div>

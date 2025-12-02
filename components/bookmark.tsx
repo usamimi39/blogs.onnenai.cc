@@ -86,14 +86,12 @@ export async function Bookmark({ url }: BookmarkProps) {
       </div>
       
       {meta.image && (
-        <div className="w-[180px] h-full relative border-l border-border shrink-0 hidden sm:block">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={meta.image}
-            alt={meta.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <div
+          className="w-[200px] h-full border-l border-border shrink-0 hidden sm:block bg-cover bg-top bg-no-repeat bg-muted/10"
+          style={{ backgroundImage: `url(${meta.image})` }}
+          role="img"
+          aria-label={meta.title}
+        />
       )}
     </Link>
   );
