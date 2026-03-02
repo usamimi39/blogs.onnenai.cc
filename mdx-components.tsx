@@ -51,7 +51,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ImageViewer,
     VideoViewer,
     Tweet,
-    mixi2: Mixi2Post,
+    Mixi2: Mixi2Post,
     Bookmark,
     Accordion,
     AccordionContent,
