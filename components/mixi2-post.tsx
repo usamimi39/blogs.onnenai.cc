@@ -11,13 +11,10 @@ interface Mixi2PostProps {
  * 例: <Mixi2 url="https://mixi.social/@user/posts/xxx" />
  */
 export function Mixi2Post({ url, height = 500 }: Mixi2PostProps) {
-  // URLからembedパスを生成: /@user/posts/id → /@user/posts/id に /embed を挿入
-  const embedUrl = url.replace(/(\/posts\/)/, "/embed$1");
-
   return (
     <div className="my-6 flex justify-center">
       <iframe
-        src={embedUrl}
+        src={url}
         width="100%"
         height={height}
         style={{
