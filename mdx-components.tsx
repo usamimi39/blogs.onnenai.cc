@@ -8,6 +8,7 @@ import {
   ImageViewer,
   VideoViewer,
 } from "@/components/media-viewer";
+import { Mixi2Post } from "@/components/mixi2-post";
 import {
   Accordion,
   AccordionContent,
@@ -23,7 +24,11 @@ const createHeading = (level: number) => {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    return <CopyHeader level={level} {...props}>{children}</CopyHeader>;
+    return (
+      <CopyHeader level={level} {...props}>
+        {children}
+      </CopyHeader>
+    );
   };
 
   Heading.displayName = `Heading${level}`;
@@ -46,6 +51,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ImageViewer,
     VideoViewer,
     Tweet,
+    Mixi2: Mixi2Post,
     Bookmark,
     Accordion,
     AccordionContent,
