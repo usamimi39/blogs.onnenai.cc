@@ -4,6 +4,17 @@ import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
 import { siteConfig } from "@/lib/site";
 
+type BlogData = {
+  title: string;
+  description: string;
+  date: string;
+  tags?: string[];
+  featured?: boolean;
+  readTime?: string;
+  author?: string;
+  thumbnail?: string;
+};
+
 const blogSource = loader({
   baseUrl: "/blog",
   source: createMDXSource(docs, meta),
@@ -33,15 +44,17 @@ export async function generateMetadata({
       };
     }
 
+    const data = page.data as BlogData;
+
     const ogUrl = `${siteConfig.url}/blog/${slug}`;
     const ogImage = `${ogUrl}/opengraph-image`;
 
     return {
-      title: page.data.title,
-      description: page.data.description,
+      title: data.title,
+      description: data.description,
       keywords: [
-        page.data.title,
-        ...(page.data.tags || []),
+        data.title,
+        ...(data.tags ?? []),
         "Blog",
         "Article",
         "Web Development",
@@ -51,11 +64,11 @@ export async function generateMetadata({
       ],
       authors: [
         {
-          name: page.data.author || "Magic UI",
+          name: data.author ?? "Magic UI",
           url: siteConfig.url,
         },
       ],
-      creator: page.data.author || "Magic UI",
+      creator: data.author ?? "Magic UI",
       publisher: "Magic UI",
       robots: {
         index: true,
@@ -69,28 +82,28 @@ export async function generateMetadata({
         },
       },
       openGraph: {
-        title: page.data.title,
-        description: page.data.description,
+        title: data.title,
+        description: data.description,
         type: "article",
         url: ogUrl,
-        publishedTime: page.data.date,
-        authors: [page.data.author || "Magic UI"],
-        tags: page.data.tags,
+        publishedTime: data.date,
+        authors: [data.author ?? "Magic UI"],
+        tags: data.tags,
         images: [
           {
-            url: page.data.thumbnail || ogImage,
+            url: data.thumbnail ?? ogImage,
             width: 1200,
             height: 630,
-            alt: page.data.title,
+            alt: data.title,
           },
         ],
         siteName: siteConfig.name,
       },
       twitter: {
         card: "summary_large_image",
-        title: page.data.title,
-        description: page.data.description,
-        images: [page.data.thumbnail || ogImage],
+        title: data.title,
+        description: data.description,
+        images: [data.thumbnail ?? ogImage],
         creator: "@onnenai_w57",
         site: "@onnenai_w57",
       },
