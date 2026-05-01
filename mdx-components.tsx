@@ -9,6 +9,7 @@ import {
   VideoViewer,
 } from "@/components/media-viewer";
 import { Mixi2Post } from "@/components/mixi2-post";
+import { MisskeyPost, MisskeyEmbed } from "@/components/misskey-post";
 import {
   Accordion,
   AccordionContent,
@@ -52,6 +53,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     VideoViewer,
     Tweet,
     Mixi2: Mixi2Post,
+    Misskey: MisskeyPost,
+    MisskeyEmbed,
     Bookmark,
     Accordion,
     AccordionContent,
